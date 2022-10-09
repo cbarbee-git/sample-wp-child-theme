@@ -1,0 +1,77 @@
+{
+  "name": "cbarbee-git/sample",
+  "description": "Chad Barbee Sample WordPress Site",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "chadbarbee",
+      "email": "email@example.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "platform": {
+      "php": "7.2.25",
+      "ext-curl": "1",
+      "ext-gd": "1",
+      "ext-mbstring": "1"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "johnpbloch/wordpress-core-installer": true
+    }
+  },
+  "repositories": {
+    "wpackagist": {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  },
+  "require": {
+    "php": ">=7.2",
+    "composer/installers": "^1.0",
+    "johnpbloch/wordpress": "^6.0",
+    "wpackagist-theme/sydney":">=2.13",
+    "wpackagist-plugin/akismet":">=5.0.1",
+    "wpackagist-plugin/add-logo-to-admin": ">=1.6",
+    "wpackagist-plugin/advanced-custom-fields": ">=6.0.2",
+    "wpackagist-plugin/advanced-custom-post-types": ">=0.5.6",
+    "wpackagist-plugin/allow-multiple-accounts": ">=3.0",
+    "wpackagist-plugin/better-wp-security": ">=7.9",
+    "wpackagist-plugin/classic-editor": ">=1.6",
+    "wpackagist-plugin/no-category-parents": ">=0.2.4.1",
+    "wpackagist-plugin/user-role-editor": ">=4.39",
+    "wpackagist-plugin/user-switching": ">=1.4",
+    "wpackagist-plugin/wp-pagenavi":">=2.93.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5"
+  },
+  "extra": {
+    "installer-paths": {
+      "wordpress/wp-content/plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "type:wordpress-plugin"
+      ],
+      "wordpress/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "wordpress/wp-install"
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/phpcs --standard=phpcs.xml",
+    "pre-install-cmd": "composer wp-pre-install",
+    "pre-update-cmd": "composer wp-pre-install",
+    "post-install-cmd": "composer wp-post-install",
+    "post-update-cmd": "composer wp-post-install",
+    "stage": "composer phpcs",
+    "wp-pre-install": ["mkdir -p wordpress/wp-install"],
+    "wp-post-install": [
+      "rm -rf wordpress/wp-install/wp-content/ wordpress/wp-install/composer.json",
+      "cp -r wordpress/wp-install/* wordpress",
+      "rm -rf wordpress/wp-install"
+    ]
+  }
+}
