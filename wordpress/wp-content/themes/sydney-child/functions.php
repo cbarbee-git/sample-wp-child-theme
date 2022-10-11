@@ -19,6 +19,11 @@ function sydney_child_enqueue() {
 /* ADD YOUR CUSTOM FUNCTIONS BELOW */
 
 /**
+ * Include custom shortcode here.
+ */
+include_once ('custom-shortcodes.php');
+
+/**
  * CHILD - Theme dashboard.
  */
 function chad_sydney_dashboard_settings($settings){
@@ -27,5 +32,6 @@ function chad_sydney_dashboard_settings($settings){
     return $settings;
 }
 add_filter( 'thd_register_settings', 'chad_sydney_dashboard_settings',999);//be sure to send a priority (this makes sure the filter runs after parent theme).
+
 
 
