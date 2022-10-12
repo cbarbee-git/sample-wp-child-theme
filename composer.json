@@ -40,6 +40,7 @@
     "wpackagist-plugin/allow-multiple-accounts": ">=3.0",
     "wpackagist-plugin/better-wp-security": ">=7.9",
     "wpackagist-plugin/classic-editor": ">=1.6",
+    "wpackagist-plugin/classic-widgets": ">=0.3",
     "wpackagist-plugin/no-category-parents": ">=0.2.4.1",
     "wpackagist-plugin/user-role-editor": ">=4.39",
     "wpackagist-plugin/user-switching": ">=1.4",
