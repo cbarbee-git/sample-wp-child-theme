@@ -26,12 +26,17 @@
     "wpackagist": {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    "sample-wp-plugin": {
+      "type": "git",
+      "url": "https://github.com/cbarbee-git/sample-wp-plugin"
     }
   },
   "require": {
     "php": ">=7.2",
     "composer/installers": "^1.0",
     "johnpbloch/wordpress": "^6.0",
+    "cbarbee-git/sample-wp-plugin": "dev-main",
     "wpackagist-theme/sydney":">=2.13",
     "wpackagist-plugin/akismet":">=5.0.1",
     "wpackagist-plugin/add-logo-to-admin": ">=1.6",
